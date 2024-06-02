@@ -15,6 +15,7 @@
     outputs.nixosModules.locale
     outputs.nixosModules.xserver
     outputs.nixosModules.audio
+    outputs.nixosModules.bootloader
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -73,16 +74,6 @@
 
   #  Add the rest of your current configuration
 
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      devices = [ "nodev" ];
-      efiSupport = true;
-      useOSProber = true;
-    };
-  };
-
   # Set your hostname
   networking.hostName = "horus";
 
@@ -105,6 +96,7 @@
         #  thunderbird
         git
         # neovim
+        just
         vscode
       ];      
     };

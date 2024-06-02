@@ -6,4 +6,5 @@
   locale = import ./locale.nix;
   xserver = import ./xserver.nix;
   audio = import ./audio.nix;
+  bootloader = import ./bootloader.nix;
 }
