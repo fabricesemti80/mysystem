@@ -63,7 +63,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./hosts/horus/configuration.nix
           inputs.nixvim.nixosModules.nixvim
         ];
       };
