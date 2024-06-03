@@ -37,7 +37,7 @@ rebuild-pre:
 
 rebuild-system:
     just rebuild-pre
-    sudo nixos-rebuild switch --flake .#$HOSTNAME
+    sudo nixos-rebuild switch --show-trace --flake .#$HOSTNAME
 
 rebuild-home:
     just rebuild-pre

@@ -12,16 +12,17 @@
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
-    ../common/locale.nix
-    ../common/users.nix
-    ../common/packages.nix
+    ../../modules/nixos/locale.nix
+    ../../modules/nixos/users.nix
+    ../../modules/nixos/packages.nix
 
     # Import host's bootloader config
-    ../common/bootloader.nix
+    ../../modules/nixos/bootloader.nix
 
     # Host specific configs
-    ../common/audio.nix
-    ../common/xserver.nix
+    ../../modules/nixos/audio.nix
+    ../../modules/nixos/xserver.nix
+    ../../modules/nixos/hyprland.nix
 
     ../../modules/nixos/nixvim/nixvim.nix
 
