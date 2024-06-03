@@ -46,3 +46,10 @@ rebuild-home:
 rebuild-full:
     just rebuild-system
     just rebuild-home
+
+update:
+    just rebuild-pre
+    nix flake update    
+
+gc:
+	nix-collect-garbage --delete-old    
