@@ -15,17 +15,15 @@
     /* -------------------------- Host-specific config -------------------------- */
     ./hardware-configuration.nix
     ./networking.nix
+    ./bootloader.nix
+    /* ---------------------- Default modules for all hosts --------------------- */
+        ../../modules/nixosModules/defaults
     /* -------------- Modules to configure varius system parameters ------------- */
-    ../../modules/nixosModules/locale.nix
-    ../../modules/nixosModules/users.nix
     ../../modules/nixosModules/packages.nix
-    ../../modules/nixosModules/bootloader.nix
-    ../../modules/nixosModules/audio.nix
     ../../modules/nixosModules/xserver.nix
-    ../../modules/nixosModules/hyprland.nix
     ../../modules/nixosModules/nixvim/nixvim.nix
-    ../../modules/nixosModules/nixConfig.nix
-    ../../modules/nixosModules/ssh.nix
+    /* ----------------------------- Desktop manager ---------------------------- */
+    ../../modules/nixosModules/desktops/gnome
 
   ];
 
