@@ -16,6 +16,13 @@
     ../common/locale.nix
     ../common/users.nix
     
+      # Import host's bootloader config
+    ../common/bootloader.nix
+
+    # Host specific configs
+    ../common/audio.nix
+    ../common/xserver.nix
+
     ../../modules/nixos/nixvim/nixvim.nix
   
 
@@ -29,12 +36,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
 
-    # Import host's bootloader config
-    ./bootloader.nix
 
-    # Host specific configs
-    ./audio.nix
-    ./xserver.nix
 
   ];
 
