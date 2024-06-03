@@ -13,9 +13,11 @@
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
     
-    ../../modules/nixos/locale.nix
+    ../common/locale.nix
+    ../common/users.nix
+    
     ../../modules/nixos/nixvim/nixvim.nix
-    ../../modules/nixos/users.nix
+  
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd

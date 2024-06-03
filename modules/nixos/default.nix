@@ -3,9 +3,5 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
-  locale = import ./locale.nix;
-  xserver = import ./xserver.nix;
-  audio = import ./audio.nix;
-  bootloader = import ./bootloader.nix;
-  nixvim = import ./nixvim/nixvim.nix;
+
 }
