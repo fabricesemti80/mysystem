@@ -19,7 +19,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    ../common/gui
     ../common/tui
 
     ../common/git.nix
@@ -53,8 +52,8 @@
 
   # Set your username
   home = {
-    username = "fs";
-    homeDirectory = "/home/fs";
+    username = "808fsemti";
+    homeDirectory = "/home/808fsemti";
   };
 
   # Add stuff for your user as you see fit:

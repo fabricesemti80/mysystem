@@ -58,7 +58,8 @@
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
-      # replace with your hostname
+
+      # Personal laptop
       horus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
@@ -72,7 +73,8 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      # replace with your username@hostname
+
+      # Home on my personal device
       "fs@horus" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
@@ -81,6 +83,17 @@
           ./home/fs/home.nix
         ];
       };
+
+      # Home on my work server
+      "808fsemti@dc1devjump02p" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home/808fsemti/home.nix
+        ];
+      };
+
     };
   };
 }
