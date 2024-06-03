@@ -17,7 +17,7 @@
     ./networking.nix
     ./bootloader.nix
     /* ---------------------- Default modules for all hosts --------------------- */
-        ../../modules/nixosModules/defaults
+    ../../modules/nixosModules/defaults
     /* -------------- Modules to configure varius system parameters ------------- */
     ../../modules/nixosModules/packages.nix
     ../../modules/nixosModules/xserver.nix
@@ -27,6 +27,7 @@
 
   ];
 
+  programs.firefox.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";

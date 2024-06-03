@@ -1,15 +1,30 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }: {
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
+  };
 
-{
-  # List packages installed in the system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
 
-    fira-code-nerdfont
+    /* ------------------------------ Desktop apps ------------------------------ */
+    firefox
+    # chromium
+    # telegram-desktop
+    alacritty
+    # obs-studio
+    rofi
+    wofi
+    mpv
+    kdenlive
+    # discord
+    gparted
+    # obsidian
+    # zoom-us
+    pcmanfm-qt    
     _1password
     _1password-gui
 
-    ### Development Tools:
+    /* --------------------------- Developer Tools: --------------------------- */
     git # ? (Version control system)
     git-crypt # ? (Transparent file encryption in git)
     go-task # ? (Task runner / build tool)
@@ -24,27 +39,31 @@
     ripgrep # ? (Fast and efficient text search tool)
     wget # ? (Command-line utility to download files from the web)
 
-    ### Security
+    /* -------------------------------- Security -------------------------------- */
     sops # ? (Simple and flexible tool for managing secrets)
     gnupg # ? (GNU Privacy Guard - encryption and signing tool)
     pinentry-qt # ? Qt-based PIN or passphrase entry dialog for GnuPG
 
-    ## Terminal enhancement
-    kitty # ? (Fast, featureful, GPU based terminal emulator)
+    /* -------------------------- Terminal enhancement -------------------------- */
     ranger # ? (Console file manager with VI key bindings)
     neovim # ? (Text editor that seeks to improve upon Vim)
     tree # ? (Recursive directory listing command)
     tmux # ? (Terminal multiplexer)
 
-    ### Programming Language:
+    /* ------------------------------ Coding stuff ------------------------------ */
     go # ? (Go programming language)
+    gnumake
+    gcc
+    # nodejs
+    # python
+    # (python3.withPackages (ps: with ps; [ requests ]))    
 
-    ### Utilities:
+    /* ------------------------------- Utilities: ------------------------------- */
     age # ? (Simple, modern file encryption tool)
     bat # ? (A cat(1) clone with syntax highlighting and Git integration)
     direnv # ? (Environment switcher for the shell)
 
-    ### Command-line Utilities:
+    /* ------------------------- Command-line Utilities: ------------------------ */
     btop # ? (Resource monitor)
     cmatrix # ? (Matrix screensaver)
     cowsay # ? (Program that generates ASCII pictures of a cow with a message)
@@ -60,5 +79,93 @@
     curl # ? (Command-line tool for making HTTP requests)
     httpie # ? (Command-line HTTP client)
     wget # ? (Command-line utility to download files from the web)
+    file
+    tree
+    wget
+    git
+    fastfetch
+    htop
+    nix-index
+    unzip
+    scrot
+    ffmpeg
+    light
+    lux
+    mediainfo
+    ranger
+    zram-generator
+    cava
+    zip
+    ntfs3g
+    yt-dlp
+    brightnessctl
+    swww
+    openssl
+    lazygit
+    bluez
+    bluez-tools
+
+    /* -------------------------------- GUI utils ------------------------------- */
+    feh
+    imv
+    dmenu
+    screenkey
+    mako
+    gromit-mpx
+
+    /* ------------------------------- Xorg stuff ------------------------------- */
+    #xterm
+    #xclip
+    #xorg.xbacklight
+
+    /* ------------------------------ Wayland stuff ----------------------------- */
+    xwayland
+    wl-clipboard
+    cliphist
+
+    /* ------------------------------ WMs and stuff ----------------------------- */
+    herbstluftwm
+    hyprland
+    seatd
+    xdg-desktop-portal-hyprland
+    polybar
+    waybar
+
+    /* ---------------------------------- Sound --------------------------------- */
+    pipewire
+    pulseaudio
+    pamixer
+
+    /* -------------------------------- GPU stuff ------------------------------- */
+    # amdvlk
+    # rocm-opencl-icd
+    # glaxnimate
+
+    /* ----------------------------- Screenshotting ----------------------------- */
+    grim
+    grimblast
+    slurp
+    flameshot
+    swappy
+
+    /* ---------------------------------- Other --------------------------------- */
+    home-manager
+    spice-vdagent
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct
+    papirus-nord
+  ];
+
+  /* ---------------------------------- Fonts --------------------------------- */
+  fonts.packages = with pkgs; [
+    font-awesome    
+    fira-code-nerdfont
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-emoji
+    twemoji-color-font
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
 }
