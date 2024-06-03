@@ -12,19 +12,19 @@
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
-    ../../modules/nixos/locale.nix
-    ../../modules/nixos/users.nix
-    ../../modules/nixos/packages.nix
+    ../../modules/nixosModules/locale.nix
+    ../../modules/nixosModules/users.nix
+    ../../modules/nixosModules/packages.nix
 
     # Import host's bootloader config
-    ../../modules/nixos/bootloader.nix
+    ../../modules/nixosModules/bootloader.nix
 
     # Host specific configs
-    ../../modules/nixos/audio.nix
-    ../../modules/nixos/xserver.nix
-    ../../modules/nixos/hyprland.nix
+    ../../modules/nixosModules/audio.nix
+    ../../modules/nixosModules/xserver.nix
+    ../../modules/nixosModules/hyprland.nix
 
-    ../../modules/nixos/nixvim/nixvim.nix
+    ../../modules/nixosModules/nixvim/nixvim.nix
 
 
     # Or modules from other flakes (such as nixos-hardware):
@@ -36,6 +36,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./networking.nix
 
 
 

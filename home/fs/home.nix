@@ -19,11 +19,12 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    ../common/gui
-    ../common/tui
+    ../../modules/homeModules/gui
+    ../../modules/homeModules/tui
 
-    ../common/git.nix
-    ../common/zsh.nix
+    ../../modules/homeModules/git.nix
+    ../../modules/homeModules/zsh.nix
+    
   ];
 
   nixpkgs = {
