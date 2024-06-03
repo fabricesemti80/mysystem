@@ -33,7 +33,7 @@ default:
     @just --list --unsorted --list-heading $'{{BOLD}}{{GREEN}}Available recipes:{{NEWLINE}}{{RESET}}'
 
 rebuild-pre:    
-    git add *.nix
+    git add .
 
 rebuild-system:
     just rebuild-pre

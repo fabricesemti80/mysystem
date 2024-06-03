@@ -7,4 +7,5 @@
   xserver = import ./xserver.nix;
   audio = import ./audio.nix;
   bootloader = import ./bootloader.nix;
+  nixvim = import ./nixvim/nixvim.nix;
 }

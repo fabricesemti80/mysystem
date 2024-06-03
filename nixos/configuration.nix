@@ -16,6 +16,7 @@
     outputs.nixosModules.xserver
     outputs.nixosModules.audio
     outputs.nixosModules.bootloader
+    outputs.nixosModules.nixvim
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
