@@ -19,11 +19,18 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    ../../modules/homeModules/gui
-    ../../modules/homeModules/tui
+    ../../modules/homeModules/gui/default.nix
+    ../../modules/homeModules/tui/default.nix
 
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
+    ../../modules/homeModules/alacritty.nix
+    ../../modules/homeModules/qt.nix
+
+    ../../modules/homeModules/wms/hyprland.nix
+    ../../modules/homeModules/wms/waybar.nix
+
+
     
   ];
 

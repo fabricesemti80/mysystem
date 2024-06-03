@@ -23,7 +23,8 @@
     ../../modules/nixosModules/xserver.nix
     ../../modules/nixosModules/nixvim/nixvim.nix
     /* ----------------------------- Desktop manager ---------------------------- */
-    ../../modules/nixosModules/desktops/gnome
+    ../../modules/nixosModules/desktops/gnome/default.nix
+    ../../modules/nixosModules/desktops/hyprland/default.nix
 
   ];
 
