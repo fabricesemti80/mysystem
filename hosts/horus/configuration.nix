@@ -12,11 +12,10 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
-    outputs.nixosModules.locale
-    outputs.nixosModules.xserver
-    outputs.nixosModules.audio
-    outputs.nixosModules.bootloader
-    outputs.nixosModules.nixvim
+    
+    ../../modules/nixos/locale.nix
+    ../../modules/nixos/nixvim/nixvim.nix
+    ../../modules/nixos/users.nix
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -27,6 +26,14 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+
+    # Import host's bootloader config
+    ./bootloader.nix
+
+    # Host specific configs
+    ./audio.nix
+    ./xserver.nix
+
   ];
 
   nixpkgs = {
@@ -78,30 +85,7 @@
   # Set your hostname
   networking.hostName = "horus";
 
-  # Configure your system-wide user settings (groups, etc), add more users as needed.
-  users.users = {
-    #  Replace with your username
-    fs = {
-      # You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
-      # Be sure to change it (using passwd) after rebooting!
-      # initialPassword = "correcthorsebatterystaple";
-      isNormalUser = true;
-      description = "Fabrice Semti";
-      openssh.authorizedKeys.keys = [
-        # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
-      ];
-      # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = with pkgs; [
-        #  thunderbird
-        git
-        # neovim
-        just
-        vscode
-      ];      
-    };
-  };
+
 
   # This setups a SSH server. Very important if you're setting up a headless system.
   # Feel free to remove if you don't need it.
