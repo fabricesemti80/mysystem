@@ -19,7 +19,8 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
 
-    ../../modules/homeModules/tui
+    ../../modules/homeModules/tui    
+    ../../modules/homeModules/work
 
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
