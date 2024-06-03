@@ -20,6 +20,7 @@
     # ./nvim.nix
     ../common/git.nix    
     ../common/packages.nix
+    ../common/zsh.nix
   ];
 
   nixpkgs = {

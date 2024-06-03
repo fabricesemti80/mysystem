@@ -54,7 +54,7 @@
     lolcat # ? (Colorize text in the terminal)
     man-pages # ? (Linux manual pages)
     nano # ? (Text editor for Unix-like operating systems)
-    neofetch # ? (Command-line system information tool)
+    fastfetch # commandnd-line system information tool)
     tailscale # ? (Mesh VPN service for easy and secure network access)
     dig # ? (DNS lookup utility)
     curl # ? (Command-line tool for making HTTP requests)
