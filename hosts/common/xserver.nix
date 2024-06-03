@@ -17,14 +17,16 @@ in {
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = " ";
-    xkbOptions = "grp:win_space_toggle";
+    xkb = {
+      variant = " ";
+      options = "grp:win_space_toggle";
+      layout = "us";
+    };
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "fs";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "fs";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
