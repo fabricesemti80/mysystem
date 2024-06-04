@@ -1,15 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: 
-let 
- userName = fs;
+{ inputs, outputs, lib, config, pkgs, ... }:
+let userName = "fs";
 in {
   # You can import other home-manager modules here
   imports = [
@@ -29,10 +21,10 @@ in {
     ../../modules/homeModules/zsh.nix
 
     inputs.nix-colors.homeManagerModules.default
-    
+
   ];
 
-    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   nixpkgs = {
     # You can add overlays here
@@ -64,7 +56,7 @@ in {
     username = "${userName}";
     homeDirectory = "/home/${userName}";
   };
-  
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
