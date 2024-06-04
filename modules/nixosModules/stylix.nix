@@ -1,8 +1,10 @@
-{ config, lib, pkgs, inputs,  ... }:
+{ config, lib, pkgs, inputs, userSettings,  ... }:
 let
-  theme = "bespin";
-  backgroundUrl = builtins.readFile (./. + "../../../themes/"+("/"+theme)+"/backgroundurl.txt");
-  backgroundSha256 = builtins.readFile (./. + "../../../themes/"+("/"+theme)+"/backgroundsha256.txt");
+  # theme = "darkmoss";
+
+  themePath = "../../../themes"+("/"+userSettings.theme+"/"+userSettings.theme)+".yaml";
+  backgroundUrl = builtins.readFile (./. + "../../../themes/"+("/"+userSettings.theme)+"/backgroundurl.txt");
+  backgroundSha256 = builtins.readFile (./. + "../../../themes/"+("/"+userSettings.theme)+"/backgroundsha256.txt");
 
 in {
   stylix.image = pkgs.fetchurl {
@@ -10,4 +12,5 @@ in {
     sha256 = backgroundSha256;
   };
   stylix.polarity = "dark";
+  stylix.base16Scheme = ./. + themePath;
 }
