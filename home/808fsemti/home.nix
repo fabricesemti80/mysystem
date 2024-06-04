@@ -12,6 +12,8 @@ in {
     /* ------------------------- apps with configuration ------------------------ */
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
+
+    ../../modules/homeModules/stylix.nix
   ];
 
   nixpkgs = {

@@ -90,6 +90,7 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home/fs/home.nix
+          stylix.homeManagerModules.stylix
         ];
       };
 
@@ -100,6 +101,7 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home/808fsemti/home.nix
+          stylix.homeManagerModules.stylix
         ];
       };
 
