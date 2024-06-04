@@ -5,31 +5,36 @@
 , pkgs
 , ...
 }: {
-  
-  home.packages = with pkgs; [
-    ## Developer Tools
-    deadnix # A tool to detect dead code in Nix packages
-    git # A version control system for tracking changes in source code
-    just # A command runner for managing project-specific tasks
-    niv # Easy dependency management for Nix projects
-    nixfmt-classic # A Nix code formatter
-    pre-commit # A framework for managing and maintaining multi-language pre-commit hooks
 
-    ## Utilities
+  home.packages = with pkgs; [
+
+
+    /* -------------------------------- Utilities ------------------------------- */
+
+    bat # ? (A cat(1) clone with syntax highlighting and Git integration)
+    btop # Resource monitor
+    cava # Console-based audio visualizer for ALSA
+    cmatrix # Matrix screensaver
+    cowsay # Program that generates ASCII pictures of a cow with a message
+    curl # Command-line tool for making HTTP requests
+    direnv # ? (Environment switcher for the shell)    
+    eza # Command-line utility for task automation    
+    dig # DNS lookup utility
+    duf # Disk usage/free utility    
     fastfetch # A fast, minimalistic system information utility
     htop # An interactive process viewer for Unix systems
-    jq # A lightweight and flexible command-line JSON processor
+    httpie # ? (Command-line HTTP client)
+    jq # ? (Lightweight and flexible command-line JSON processor)
+    just # A command runner for managing project-specific tasks  
+    lazygit # A simple terminal UI for git commands  
     ripgrep # A line-oriented search tool that recursively searches directories for a regex pattern
-    tmux # A terminal multiplexer that allows multiple terminal sessions to be accessed simultaneously
+    ranger # A terminal-based file manager
+    scrot # Command-line screen capture utility
     tree # A recursive directory listing command that produces a depth-indented listing of files
     whois # A utility that retrieves information about domain names
     zsh # A powerful shell designed for interactive use and scripting
+    feh # Lightweight image viewer
 
-    ## Graphical Tools
-    
-    _1password-gui # A graphical interface for the 1Password password manager
-    alacritty # A GPU-accelerated terminal emulator
-    firefox # A web browser developed by Mozilla
   ];
 
 }
