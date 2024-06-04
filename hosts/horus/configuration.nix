@@ -13,6 +13,9 @@
   /* -------------------------------------------------------------------------- */
   imports = [
 
+    /* -------------------------------- packages -------------------------------- */
+    ../../modules/nixosModules/defaultPackages.nix
+
     /* -------------------------- Host-specific config -------------------------- */
     ./hardware-configuration.nix
     ./networking.nix
@@ -22,8 +25,6 @@
     ../../modules/nixosModules/defaults
 
     /* -------------- Modules to configure varius system parameters ------------- */
-    ../../modules/nixosModules/packages.nix
-    ../../modules/nixosModules/xserver.nix
     ../../modules/nixosModules/stylix.nix
     # ../../modules/nixosModules/nixvim/nixvim.nix
 

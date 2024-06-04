@@ -1,23 +1,46 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 let
   # variables would go here!
-in {
+in
+{
+  services.xserver = {
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+    enable = true;
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "fs";
+    /* #? ------------------------------- displaylink ------------------------------ */
+    videoDrivers = [ "displaylink" "modesetting" ];
+
+    # windowManager.herbstluftwm.enable = true;
+
+    /* ---------------------------------- GNOME --------------------------------- */
+    displayManager = {
+      gdm.enable = true;
+    };
+    desktopManager = {
+      gnome.enable = true;
+    };
+
+    /* ---------------------------------- Misc ---------------------------------- */
+    xkb = {
+      variant = " ";
+      options = "grp:win_space_toggle";
+      layout = "us";
+    };
+  };
+
+  services.displayManager = {
+
+    # optional -auto login
+    autoLogin.enable = true;
+    autoLogin.user = "fs";
+    
+  };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-
 }
