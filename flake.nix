@@ -21,6 +21,9 @@
 
     # Nix colors
     nix-colors.url = "github:misterio77/nix-colors";
+
+    # Stylix
+    stylix.url = "github:danth/stylix";
     
   };
 
@@ -28,6 +31,7 @@
     self,
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -70,6 +74,7 @@
           # > Our main nixos configuration file <
           ./hosts/horus/configuration.nix
           inputs.nixvim.nixosModules.nixvim
+          stylix.nixosModules.stylix
         ];
       };
     };
