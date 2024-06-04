@@ -7,7 +7,10 @@
   config,
   pkgs,
   ...
-}: {
+}: 
+let 
+ userName = fs;
+in {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -58,10 +61,10 @@
 
   # Set your username
   home = {
-    username = "fs";
-    homeDirectory = "/home/fs";
+    username = "${userName}";
+    homeDirectory = "/home/${userName}";
   };
-
+  
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
