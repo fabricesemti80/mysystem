@@ -9,20 +9,24 @@
 }: {
 
   /* -------------------------------------------------------------------------- */
-  /*                   You can import other NixOS modules here                  */
+  /*                                   Imports                                  */
   /* -------------------------------------------------------------------------- */
   imports = [
+
     /* -------------------------- Host-specific config -------------------------- */
     ./hardware-configuration.nix
     ./networking.nix
     ./bootloader.nix
+
     /* ---------------------- Default modules for all hosts --------------------- */
     ../../modules/nixosModules/defaults
+
     /* -------------- Modules to configure varius system parameters ------------- */
     ../../modules/nixosModules/packages.nix
     ../../modules/nixosModules/xserver.nix
     ../../modules/nixosModules/stylix.nix
     # ../../modules/nixosModules/nixvim/nixvim.nix
+
     /* ----------------------------- Desktop manager ---------------------------- */
     ../../modules/nixosModules/desktops/gnome/default.nix
 
