@@ -5,9 +5,11 @@ let userName = "808fsemti";
 in {
 
   imports = [
-    ../../modules/homeModules/tui
-    ../../modules/homeModules/work
+    /* -------------------------------- packages -------------------------------- */
+    ../../modules/homeModules/defaultPackages.nix
+    ../../modules/homeModules/workPackages.nix
 
+    /* ------------------------- apps with configuration ------------------------ */
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
   ];

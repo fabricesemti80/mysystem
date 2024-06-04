@@ -5,18 +5,14 @@ let userName = "fs";
 in {
   # You can import other home-manager modules here
   imports = [
+    /* -------------------------------- packages -------------------------------- */
+    ../../modules/homeModules/defaultPackages.nix
 
-    ../../modules/homeModules/gui
-    ../../modules/homeModules/tui
-
+    /* ------------------------- apps with configuration ------------------------ */
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
 
-    inputs.nix-colors.homeManagerModules.default
-
   ];
-
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   nixpkgs = {
     # You can add overlays here
