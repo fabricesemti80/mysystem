@@ -17,5 +17,8 @@ in {
       useOSProber = true;
     };
   };
+
+  # fix for Windows time out of sync
+  time.hardwareClockInLocalTime = true;
    
 }
