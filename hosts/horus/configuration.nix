@@ -21,9 +21,9 @@
     /* -------------- Modules to configure varius system parameters ------------- */
     ../../modules/nixosModules/packages.nix
     ../../modules/nixosModules/xserver.nix
-    ../../modules/nixosModules/nixvim/nixvim.nix
+    # ../../modules/nixosModules/nixvim/nixvim.nix
     /* ----------------------------- Desktop manager ---------------------------- */
-    ../../modules/nixosModules/desktops/gnome
+    ../../modules/nixosModules/desktops/gnome/default.nix
 
   ];
 

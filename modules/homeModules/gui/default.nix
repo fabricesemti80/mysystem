@@ -12,5 +12,7 @@
 
         /* -------------------- Applications with user interface -------------------- */
         _1password-gui
+        firefox
+        alacritty
   ];
 }
