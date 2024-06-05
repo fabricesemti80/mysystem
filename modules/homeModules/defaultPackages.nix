@@ -35,6 +35,8 @@
     zsh # A powerful shell designed for interactive use and scripting
     feh # Lightweight image viewer
 
+    gnome.adwaita-icon-theme
+
   ];
 
 }

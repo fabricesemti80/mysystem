@@ -12,7 +12,7 @@ in {
     ../../modules/homeModules/git.nix
     ../../modules/homeModules/zsh.nix
 
-    ../../modules/homeModules/stylix.nix
+    ../../modules/homeModules/style/stylix.nix
 
   ];
 
