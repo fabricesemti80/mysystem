@@ -53,7 +53,7 @@
         # username = "emmet"; # username
         # name = "Emmet"; # name/identifier
         # email = "emmet@librephoenix.com"; # email (used for certain configurations)
-        # dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
+        dotfilesDir = "/home/fs/mysystem"; # absolute path of the local repo
         theme = "old-hope"; # selcted theme from my themes directory (./themes/)
         # wm = "hyprland"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
         # # window manager type (hyprland or x11) translator

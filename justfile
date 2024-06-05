@@ -32,24 +32,29 @@ default:
     @#This recipe will be the default if you run just without an argument, e.g list out available commands
     @just --list --unsorted --list-heading $'{{BOLD}}{{GREEN}}Available recipes:{{NEWLINE}}{{RESET}}'
 
-rebuild-pre:    
+add-git:    
     git add .
 
+#? this next one is equivalent of --> sudo nixos-rebuild switch --show-trace --flake .#$HOSTNAME
+#? make sure to declare "dotfilesDir" and use it to set FLAKE env var!
 rebuild-system:
-    just rebuild-pre
-    sudo nixos-rebuild switch --show-trace --flake .#$HOSTNAME
+    just add-git
+    nh os switch --update
 
+#? this is equivalent of --> home-manager switch --flake .#$USER@$HOSTNAME
 rebuild-home:
-    just rebuild-pre
-    home-manager switch --flake .#$USER@$HOSTNAME
+    just add-git
+    nh home switch --update
 
 rebuild-full:
     just rebuild-system
     just rebuild-home
 
 update:
-    just rebuild-pre
+    just add-git
     nix flake update    
 
+# ? replaces --> nix-collect-garbage --delete-old 
 gc:
-	nix-collect-garbage --delete-old    
+    nh clean all --keep 5
+	   

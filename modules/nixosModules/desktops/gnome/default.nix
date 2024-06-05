@@ -11,9 +11,6 @@ in
 
     enable = true;
 
-    /* #? ------------------------------- displaylink ------------------------------ */
-    videoDrivers = [ "displaylink" "modesetting" ];
-
     # windowManager.herbstluftwm.enable = true;
 
     /* ---------------------------------- GNOME --------------------------------- */

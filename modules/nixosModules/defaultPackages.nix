@@ -46,11 +46,14 @@
 
     deadnix # A tool to detect dead code in Nix packages
     git # ? (Version control system)
+    nh # ? nix helper
     nix-index # Quickly locate Nix packages
     nix-info # ? (Nix package manager information)
     nixfmt-classic # ? (Formatter for Nix code)
     nixpkgs-fmt # ? (Formatter for Nixpkgs code)
+    nix-output-monitor
     niv # Easy dependency management for Nix projects
+    nvd
     pinentry-qt # ? (Qt-based PIN or passphrase entry dialog for GnuPG)
     pre-commit # ? Make quality commits
     ripgrep # ? (Fast and efficient text search tool)
@@ -102,6 +105,8 @@
     # xdg-desktop-portal-hyprland
     # polybar
     # waybar
+    gnome.gnome-tweaks
+
 
     /* ---------------------------------- Sound --------------------------------- */
     pamixer # Command-line mixer for PulseAudio
